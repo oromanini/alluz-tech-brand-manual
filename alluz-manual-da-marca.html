@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alluz Tech — Manual da Marca</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   ALLUZ TECH — MANUAL DA MARCA · STANDALONE
+   ═══════════════════════════════════════════════ */
+:root {
+  --bg:      #080F1E;
+  --bg-deep: #050912;
+  --bg-soft: #0E1729;
+  --surface: #121C32;
+  --line:    rgba(46,234,255,0.12);
+  --line-s:  rgba(255,255,255,0.06);
+  --cyan:    #2EEAFF;
+  --blue:    #0057FF;
+  --white:   #F5F9FF;
+  --muted:   #6B7E9E;
+  --dim:     #3A4860;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:#02050B;
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── PAGE FRAME ── */
+.page{
+  width:100%;max-width:1440px;
+  min-height:960px;
+  margin:0 auto 40px;
+  position:relative;
+  overflow:hidden;
+  background:var(--bg);
+  box-shadow:0 30px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(46,234,255,0.05);
+}
+.page.deep{background:var(--bg-deep)}
+.page.soft{background:var(--bg-soft)}
+.page.light-page{background:#F0F4FA;color:#071028}
+
+/* ── HEADER & FOOTER ── */
+.ph{
+  position:absolute;top:0;left:0;right:0;
+  padding:16px 80px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px solid var(--line-s);
+  z-index:10;
+}
+.ph .crumb{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+.ph .crumb .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+.ph .right{font-size:11px;color:var(--dim);letter-spacing:1px}
+
+.pf{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:16px 80px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid var(--line-s);
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:2px;
+  color:var(--dim);z-index:10;
+}
+
+/* ── TYPOGRAPHY ── */
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--cyan);display:flex;gap:10px;align-items:center;font-weight:500;
+}
+.eyebrow::before{content:'';width:24px;height:1px;background:currentColor;opacity:0.5}
+
+.pt{
+  font-size:72px;font-weight:200;letter-spacing:-3px;line-height:0.92;
+  margin-top:20px;
+}
+.pt strong{font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+.lead{font-size:15px;line-height:1.6;color:rgba(245,249,255,0.6);font-weight:300;max-width:520px;margin-top:18px}
+
+.section-t{font-size:20px;font-weight:600;letter-spacing:-0.3px;margin-bottom:18px}
+
+.mono{font-family:'JetBrains Mono',monospace}
+
+.caption{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan)}
+
+/* ── LOGO COMPONENT ── */
+.logo-wrap{display:inline-flex;flex-direction:column;gap:0;line-height:1}
+.logo-top{display:flex;align-items:flex-end}
+.logo-alluz{font-family:'Plus Jakarta Sans';font-weight:200;letter-spacing:-0.03em;line-height:1}
+.logo-node{width:0.12em;height:0.12em;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);margin-left:0.06em;margin-bottom:0.15em;flex-shrink:0}
+.logo-bottom{display:flex;align-items:center;gap:0.08em;margin-top:0.06em}
+.logo-bar{flex:1;height:0.03em;min-width:1em;background:linear-gradient(90deg,var(--cyan),var(--blue));border-radius:2px}
+.logo-tech{font-family:'Plus Jakarta Sans';font-weight:800;font-size:0.22em;letter-spacing:0.35em;text-transform:uppercase;color:var(--white);text-indent:0.2em}
+
+.logo-sm{font-size:36px}
+.logo-md{font-size:56px}
+.logo-lg{font-size:80px}
+.logo-xl{font-size:120px}
+
+/* dark text variant */
+.logo-dark .logo-alluz{color:#071028}
+.logo-dark .logo-tech{color:#071028}
+.logo-dark .logo-node{box-shadow:none}
+
+/* ── GRID ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+
+/* ── SWATCHES ── */
+.swatch{border-radius:8px;overflow:hidden;border:1px solid var(--line-s)}
+.swatch .block{height:120px}
+.swatch .info{padding:16px 18px;background:var(--bg)}
+.swatch .info .nm{font-size:14px;font-weight:600;margin-bottom:4px}
+.swatch .info .hx{font-family:'JetBrains Mono';font-size:12px;color:var(--cyan);letter-spacing:1px;margin-bottom:2px}
+.swatch .info .det{font-size:11px;color:var(--muted)}
+
+/* ── SPEC TABLE ── */
+.spec-tbl{width:100%;border-collapse:collapse}
+.spec-tbl tr{border-bottom:1px solid var(--line-s)}
+.spec-tbl td{padding:14px 0;font-size:14px;vertical-align:top}
+.spec-tbl td:first-child{color:var(--cyan);font-weight:600;width:35%;font-size:13px;letter-spacing:0.5px}
+.spec-tbl td:last-child{color:rgba(245,249,255,0.6);font-weight:300}
+
+/* ── CALLOUT ── */
+.callout{padding:20px 24px;border-left:2px solid var(--cyan);background:rgba(46,234,255,0.04);margin-top:24px}
+.callout .ct{font-family:'JetBrains Mono';font-size:10px;letter-spacing:2px;color:var(--cyan);margin-bottom:8px;text-transform:uppercase}
+.callout p{font-size:14px;color:rgba(245,249,255,0.7);line-height:1.6;font-weight:300}
+
+/* ── TOV ── */
+.tov{background:var(--bg-soft);border:1px solid var(--line-s);border-radius:8px;padding:28px;margin-bottom:20px}
+.tov h4{font-size:16px;font-weight:600;margin-bottom:8px}
+.tov .desc{font-size:13px;color:rgba(245,249,255,0.5);margin-bottom:16px;line-height:1.5;font-weight:300}
+.tov-line{font-size:13px;padding:10px 14px;border-radius:6px;margin-bottom:6px;line-height:1.5}
+.tov-line.bad{background:rgba(255,77,77,0.06);color:#FF6B6B;border-left:2px solid #FF4D4D}
+.tov-line.good{background:rgba(46,234,255,0.06);color:rgba(46,234,255,0.9);border-left:2px solid var(--cyan)}
+
+/* ── RULES ── */
+.rule-col h4{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding-bottom:12px;border-bottom:2px solid;margin-bottom:16px}
+.rule-col.ok h4{color:#16A34A;border-color:#16A34A}
+.rule-col.no h4{color:#DC2626;border-color:#DC2626}
+.rule-col ul{list-style:none}
+.rule-col li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-s);font-size:13px;color:rgba(245,249,255,0.6);line-height:1.5;font-weight:300}
+.rule-col.ok li::before{content:'✓';color:#16A34A;font-weight:700;flex-shrink:0}
+.rule-col.no li::before{content:'✗';color:#DC2626;font-weight:700;flex-shrink:0}
+
+/* ── MOCKUP ── */
+.mock-img{width:100%;height:100%;object-fit:cover;display:block}
+.mock-tag{font-family:'JetBrains Mono';font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+.mock-spec{border-left:2px solid var(--cyan);padding-left:16px}
+.mock-spec .label{font-family:'JetBrains Mono';font-size:10px;letter-spacing:2px;color:var(--cyan);text-transform:uppercase;margin-bottom:6px}
+.mock-spec .val{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(5,9,18,0.92);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+  padding:0 80px;height:52px;
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1440px;margin:0 auto;
+}
+nav a{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+nav a:hover{color:var(--cyan)}
+.nav-links{display:flex;gap:28px}
+
+/* ── CONTENT AREAS ── */
+.content{padding:80px}
+.abs{position:absolute}
+.flex{display:flex}
+.gap-24{gap:24px}
+.gap-40{gap:40px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .page{min-height:auto}
+  .content{padding:40px 24px}
+  nav{padding:0 24px}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .pt{font-size:42px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-wrap logo-sm" style="font-size:22px">
+    <div class="logo-top"><span class="logo-alluz">Alluz</span><span class="logo-node"></span></div>
+    <div class="logo-bottom"><div class="logo-bar"></div><span class="logo-tech">Tech</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#capa">Início</a>
+    <a href="#logo">Logo</a>
+    <a href="#cor">Cor</a>
+    <a href="#tipo">Tipo</a>
+    <a href="#voz">Voz</a>
+    <a href="#apps">Aplicações</a>
+    <a href="#contato">Contato</a>
+  </div>
+</nav>
+
+<!-- ═══════════════ CAPA ═══════════════ -->
+<section class="page deep" id="capa" style="min-height:960px;display:flex;align-items:center">
+  <div class="ph">
+    <div class="crumb"><span class="dot"></span> Alluz Tech · Brand Guidelines</div>
+    <div class="right">V.1.0 / 2026 &nbsp;&nbsp; CONFIDENCIAL</div>
+  </div>
+
+  <!-- ambient -->
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 700px 300px at 75% 25%,rgba(0,87,255,0.18),transparent 70%),radial-gradient(ellipse 500px 300px at 90% 90%,rgba(46,234,255,0.08),transparent 70%)"></div>
+
+  <div class="content" style="position:relative;z-index:2;width:100%">
+    <div class="eyebrow" style="margin-bottom:32px">Manual da Marca</div>
+    <div style="font-size:140px;font-weight:200;letter-spacing:-5px;line-height:0.88">
+      Sistema<br>de marca<br><strong style="font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Alluz Tech.</strong>
+    </div>
+    <p style="margin-top:28px;font-size:17px;letter-spacing:1px;color:rgba(245,249,255,0.6);max-width:540px;font-weight:300;line-height:1.5">
+      Diretrizes oficiais de identidade visual, voz e aplicação.<br>
+      Inteligência artificial e automação para o pequeno e médio empresário.
+    </p>
+  </div>
+
+  <div class="pf"><span>Alluz Tech · 2026</span><span>01 / 30</span></div>
+</section>
+
+<!-- ═══════════════ SUMÁRIO ═══════════════ -->
+<section class="page" style="min-height:960px">
+  <div class="ph">
+    <div class="crumb"><span class="dot"></span> Sumário</div>
+    <div class="right">Navegação</div>
+  </div>
+  <div class="content" style="padding-top:160px">
+    <div class="eyebrow" style="margin-bottom:48px">Índice</div>
+    <div class="g2" style="gap:80px">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:32px"><span class="mono" style="color:var(--cyan);font-size:11px;letter-spacing:2px">01</span><span style="font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);font-weight:500">A Marca</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Quem somos</span><span class="mono" style="font-size:11px;color:var(--muted)">03</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Missão · Visão · Valores</span><span class="mono" style="font-size:11px;color:var(--muted)">04</span></div>
+
+        <div style="display:flex;align-items:baseline;gap:16px;margin-top:40px;margin-bottom:32px"><span class="mono" style="color:var(--cyan);font-size:11px;letter-spacing:2px">02</span><span style="font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);font-weight:500">Logotipo</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Logo principal</span><span class="mono" style="font-size:11px;color:var(--muted)">05</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Versão compacta</span><span class="mono" style="font-size:11px;color:var(--muted)">06</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Usos corretos e incorretos</span><span class="mono" style="font-size:11px;color:var(--muted)">07</span></div>
+      </div>
+      <div>
+        <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:32px"><span class="mono" style="color:var(--cyan);font-size:11px;letter-spacing:2px">03</span><span style="font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);font-weight:500">Cor & Tipografia</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Paleta de cores</span><span class="mono" style="font-size:11px;color:var(--muted)">08</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Tipografia</span><span class="mono" style="font-size:11px;color:var(--muted)">09</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Tom de voz</span><span class="mono" style="font-size:11px;color:var(--muted)">10</span></div>
+
+        <div style="display:flex;align-items:baseline;gap:16px;margin-top:40px;margin-bottom:32px"><span class="mono" style="color:var(--cyan);font-size:11px;letter-spacing:2px">04</span><span style="font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);font-weight:500">Aplicações</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Brindes · Kit corporativo</span><span class="mono" style="font-size:11px;color:var(--muted)">11</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Escritório · Sinalização</span><span class="mono" style="font-size:11px;color:var(--muted)">12</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Uniformes</span><span class="mono" style="font-size:11px;color:var(--muted)">13</span></div>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line-s);font-size:16px;font-weight:300;display:flex;justify-content:space-between"><span>Contato e aprovações</span><span class="mono" style="font-size:11px;color:var(--muted)">14</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>SUMÁRIO</span><span>02 / 30</span></div>
+</section>
+
+<!-- ═══════════════ QUEM SOMOS ═══════════════ -->
+<section class="page" id="marca">
+  <div class="ph"><div class="crumb"><span class="dot"></span> 01 / Marca</div><div class="right">Sobre a Alluz Tech</div></div>
+  <div class="content" style="padding-top:120px">
+    <div class="eyebrow">Capítulo 01 · A Marca</div>
+    <div class="pt">Inteligência que devolve<br><strong>tempo, foco e margem.</strong></div>
+
+    <div class="g2" style="margin-top:64px;gap:80px">
+      <div>
+        <div class="section-t">Quem somos</div>
+        <p class="lead" style="margin-top:0">A <strong style="color:var(--cyan);font-weight:500">Alluz Tech</strong> é uma empresa brasileira focada em levar soluções de IA e automação para pequenos e médios empresários. Com experiência no mercado de tecnologia, traduzimos ferramentas de ponta em soluções práticas, acessíveis e mensuráveis.</p>
+        <div style="display:flex;gap:48px;margin-top:48px">
+          <div><div style="font-size:56px;font-weight:200;letter-spacing:-1px;color:var(--cyan);line-height:1">IA</div><div style="margin-top:8px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Foco principal</div></div>
+          <div><div style="font-size:56px;font-weight:200;letter-spacing:-1px;color:var(--cyan);line-height:1">PMEs</div><div style="margin-top:8px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Nosso público</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-t">Por que existimos</div>
+        <p class="lead" style="margin-top:0">O pequeno e médio empresário do Brasil gasta horas por dia em tarefas repetitivas. A Alluz automatiza tudo isso com IA — para que cada hora de trabalho volte a ser hora de decisão, criação e crescimento.</p>
+        <div class="callout" style="margin-top:48px">
+          <div class="ct">Manifesto</div>
+          <p style="font-size:17px;color:var(--white)">"Tecnologia boa não é a mais cara — é a que devolve o seu tempo no fim do mês."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>01 · A MARCA</span><span>03 / 30</span></div>
+</section>
+
+<!-- ═══════════════ MISSÃO VISÃO VALORES ═══════════════ -->
+<section class="page soft">
+  <div class="ph"><div class="crumb"><span class="dot"></span> 01 / Marca</div><div class="right">Missão · Visão · Valores</div></div>
+  <div class="content" style="padding-top:120px">
+    <div class="eyebrow">Propósito</div>
+    <div class="pt">A bússola por trás<br><strong>de cada projeto.</strong></div>
+
+    <div class="g3" style="margin-top:64px;gap:48px">
+      <div>
+        <div class="mono" style="font-size:10px;color:var(--muted);margin-bottom:18px">01 / MISSÃO</div>
+        <div style="font-size:28px;font-weight:300;letter-spacing:-1px;line-height:1.15;margin-bottom:18px">Liberar o tempo do empresário <strong style="color:var(--cyan);font-weight:600">aplicando IA onde o trabalho repete.</strong></div>
+        <p style="font-size:14px;line-height:1.6;color:var(--muted);font-weight:300">Ajudar pequenos e médios negócios a economizar horas e recursos em tarefas operacionais por meio de automação inteligente.</p>
+      </div>
+      <div>
+        <div class="mono" style="font-size:10px;color:var(--muted);margin-bottom:18px">02 / VISÃO</div>
+        <div style="font-size:28px;font-weight:300;letter-spacing:-1px;line-height:1.15;margin-bottom:18px">Ser a porta de entrada da <strong style="color:var(--cyan);font-weight:600">IA acessível</strong> no Brasil.</div>
+        <p style="font-size:14px;line-height:1.6;color:var(--muted);font-weight:300">Tornar a Alluz referência nacional em soluções de IA aplicada à realidade do empresário brasileiro.</p>
+      </div>
+      <div>
+        <div class="mono" style="font-size:10px;color:var(--muted);margin-bottom:18px">03 / VALORES</div>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:6px">
+          <div style="display:flex;align-items:baseline;gap:14px"><span style="color:var(--cyan);font-family:monospace;font-size:11px">→</span><span style="font-size:18px;font-weight:500">Clareza acima do hype</span></div>
+          <div style="display:flex;align-items:baseline;gap:14px"><span style="color:var(--cyan);font-family:monospace;font-size:11px">→</span><span style="font-size:18px;font-weight:500">Resultado mensurável</span></div>
+          <div style="display:flex;align-items:baseline;gap:14px"><span style="color:var(--cyan);font-family:monospace;font-size:11px">→</span><span style="font-size:18px;font-weight:500">Proximidade humana</span></div>
+          <div style="display:flex;align-items:baseline;gap:14px"><span style="color:var(--cyan);font-family:monospace;font-size:11px">→</span><span style="font-size:18px;font-weight:500">Tecnologia sem fricção</span></div>
+          <div style="display:flex;align-items:baseline;gap:14px"><span style="color:var(--cyan);font-family:monospace;font-size:11px">→</span><span style="font-size:18px;font-weight:500">Aprendizado contínuo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>01 · A MARCA</span><span>04 / 30</span></div>
+</section>
+
+<!-- ═══════════════ LOGO PRINCIPAL ═══════════════ -->
+<section class="page" id="logo">
+  <div class="ph"><div class="crumb"><span class="dot"></span> 02 / Logo</div><div class="right">Logo Principal</div></div>
+  <div class="content" style="padding-top:120px">
+    <div class="eyebrow">02 · Logotipo</div>
+    <div class="pt" style="font-size:56px">A assinatura visual<br><strong>da Alluz Tech.</strong></div>
+    <p class="lead">Contraste extremo entre Hairline 200 e Bold 800 cria uma assinatura elegante e tecnológica — leve no nome, forte na especialidade.</p>
+
+    <!-- Logo showcase -->
+    <div class="g2" style="margin-top:48px;height:300px">
+      <div style="background:var(--bg-deep);border:1px dashed var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative;background-image:radial-gradient(ellipse 400px 200px at 50% 50%,rgba(0,87,255,0.1),transparent 70%)">
+        <div class="logo-wrap logo-lg">
+          <div class="logo-top"><span class="logo-alluz">Alluz</span><span class="logo-node"></span></div>
+          <div class="logo-bottom"><div class="logo-bar"></div><span class="logo-tech">Tech</span></div>
+        </div>
+        <div class="mono" style="position:absolute;bottom:14px;left:18px;font-size:10px;color:var(--muted);letter-spacing:2px">FUNDO ESCURO</div>
+      </div>
+      <div style="background:#F0F4FA;border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative">
+        <div class="logo-wrap logo-lg logo-dark">
+          <div class="logo-top"><span class="logo-alluz">Alluz</span><span class="logo-node"></span></div>
+          <div class="logo-bottom"><div class="logo-bar"></div><span class="logo-tech">Tech</span></div>
+        </div>
+        <div class="mono" style="position:absolute;bottom:14px;left:18px;font-size:10px;color:var(--dim);letter-spacing:2px">FUNDO CLARO</div>
+      </div>
+    </div>
+
+    <!-- Specs -->
+    <div style="display:flex;gap:32px;margin-top:40px">
+      <div style="flex:1;border:1px solid var(--line-s);padding:18px 20px">
+        <div class="mono" style="font-size:10px;color:var(--muted);letter-spacing:3px">TIPOGRAFIA</div>
+        <div style="font-size:18px;font-weight:500;margin-top:6px">Plus Jakarta Sans <small style="color:var(--muted);font-weight:400">200 + 800</small></div>
+      </div>
+      <div style="flex:1;border:1px solid var(--line-s);padding:18px 20px">
+        <div class="mono" style="font-size:10px;color:var(--muted);letter-spacing:3px">CORES</div>
+        <div style="font-size:18px;font-weight:500;margin-top:6px">Gradiente <small style="color:var(--muted);font-weight:400">#2EEAFF → #0057FF</small></div>
+      </div>
+      <div style="flex:1;border:1px solid var(--line-s);padding:18px 20px">
+        <div class="mono" style="font-size:10px;color:var(--muted);letter-spacing:3px">PONTO</div>
+        <div style="font-size:18px;font-weight:500;margin-top:6px">Pulse Cyan <small style="color:var(--muted);font-weight:400">glow · nó de circuito</small></div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:32px">
+      <div class="ct">Área de proteção</div>
+      <p>Manter sempre uma área livre equivalente à altura da letra "A" do wordmark em todos os lados. Nenhum elemento pode invadir essa zona.</p>
+    </div>
+  </div>
+  <div class="pf"><span>02 · LOGOTIPO</span><span>05 / 30</span></div>
+</section>
+
+<!-- ═══════════════ VERSÃO COMPACTA ═══════════════ -->
+<section class="page soft">
+  <div class="ph"><div class="crumb"><span class="dot"></span> 02 / Logo</div><div class="right">Versão Compacta</div></div>
+  <div class="content" style="padding-top:120px">
+    <div class="eyebrow">Marca reduzida</div>
+    <div class="pt" style="font-size:56px">Quando o espaço<br>é <strong>pequeno.</strong></div>
+    <p class="lead">Para favicon, ícones de app, perfis de redes sociais e espaços com menos de 120px. A versão compacta mantém o "A" geométrico com crossbar diagonal e TECH alinhado à direita abaixo.</p>
+
+    <div class="g2" style="margin-top:48px;height:280px">
+      <div style="background:var(--bg-deep);border:1px dashed var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative">
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+          <svg width="100" height="110" viewBox="0 0 110 130" fill="none">
+            <line x1="8" y1="118" x2="55" y2="6" stroke="white" stroke-width="5.5" stroke-linecap="round"/>
+            <line x1="55" y1="6" x2="102" y2="118" stroke="white" stroke-width="5.5" stroke-linecap="round"/>
+            <defs><linearGradient id="cb1" x1="10" y1="92" x2="68" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#2EEAFF"/><stop offset="1" stop-color="#0057FF"/></linearGradient><filter id="gw1"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <line x1="10" y1="92" x2="68" y2="60" stroke="url(#cb1)" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="68" cy="60" r="6" fill="#2EEAFF" filter="url(#gw1)"/>
+          </svg>
+          <span style="font-family:'Plus Jakarta Sans';font-weight:800;font-size:14px;letter-spacing:5px;color:white">TECH</span>
+        </div>
+        <div class="mono" style="position:absolute;bottom:14px;left:18px;font-size:10px;color:var(--muted);letter-spacing:2px">FUNDO ESCURO</div>
+      </div>
+      <div style="background:#F0F4FA;border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative">
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+          <svg width="100" height="110" viewBox="0 0 110 130" fill="none">
+            <line x1="8" y1="118" x2="55" y2="6" stroke="#071028" stroke-width="5.5" stroke-linecap="round"/>
+            <line x1="55" y1="6" x2="102" y2="118" stroke="#071028" stroke-width="5.5" stroke-linecap="round"/>
+            <defs><linearGradient id="cb2" x1="10" y1="92" x2="68" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#2EEAFF"/><stop offset="1" stop-color="#0057FF"/></linearGradient></defs>
+            <line x1="10" y1="92" x2="68" y2="60" stroke="url(#cb2)" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="68" cy="60" r="6" fill="#2EEAFF"/>
+          </svg>
+          <span style="font-family:'Plus Jakarta Sans';font-weight:800;font-size:14px;letter-spacing:5px;color:#071028">TECH</span>
+        </div>
+        <div class="mono" style="position:absolute;bottom:14px;left:18px;font-size:10px;color:#6B7E9E;letter-spacing:2px">FUNDO CLARO</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>02 · LOGOTIPO</span><span>06 / 30</span></div>
+</section>
+
+<!-- ═══════════════ USOS ═══════════════ -->
+<section class="page">
+  <div class="ph"><div class="crumb"><span class="dot"></span> 02 / Logo</div><div class="right">Usos Corretos e Incorretos</div></div>
+  <div class="content" style="padding-top:120px">
+    <div class="eyebrow">Regras de uso</div>
+    <div class="pt" style="font-size:56px">Proteja a marca.<br><strong>Sempre.</strong></div>
+
+    <div class="g2" style="margin-top:48px;gap:64px">
+      <div class="rule-col ok">
+        <h4>Usos Permitidos</h4>
+        <ul>
+          <li>Usar nas versões escura ou clara aprovadas</li>
+          <li>Manter proporções originais ao redimensionar</li>
+          <li>Aplicar sobre fundos com contraste adequado</li>
+          <li>Usar versão compacta nos contextos indicados</li>
+          <li>Respeitar a área de proteção mínima</li>
+          <li>Utilizar apenas arquivos originais (SVG, PNG)</li>
+        </ul>
+      </div>
+      <div class="rule-col no">
+        <h4>Usos Proibidos</h4>
+        <ul>
+          <li>Distorcer, esticar ou compactar o logotipo</li>
+          <li>Alterar cores ou aplicar efeitos não aprovados</li>
+          <li>Usar fontes com serifa em qualquer comunicação</li>
+          <li>Colocar sobre fundos com baixo contraste</li>
+          <li>Adicionar sombras, contornos ou transparências</li>
+          <li>Recriar ou redesenhar elementos do logotipo</li>
+          <li>Publicar sem aprovação prévia da Alluz Tech</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>02 · LOGOTIPO</span><span>07 / 30</span></div>
+</section>
+
+<!-- ═══════════════ CORES ═══════════════ -->
+<section class="page soft" id="cor">
+  <div class="ph"><div class="crumb"><span class="dot"></span> 03 / Cor</div><div class="right">Paleta de Cores</div></div>
+  <div class="content" style="padding-top:120px">
+    <div class="eyebrow">03 · Cor</div>
+    <div class="pt" style="font-size:56px">Ciano, azul e<br><strong>navy profundo.</strong></div>
+
+    <div class="g3" style="margin-top:48px">
+      <div class="swatch"><div class="block" style="background:#2EEAFF"></div><div class="info"><div class="nm">Ciano Alluz</div><div class="hx">#2EEAFF</div><div class="det">RGB 46·234·255 · Acento principal</div></div></div>
+      <div class="swatch"><div class="block" style="background:#0057FF"></div><div class="info"><div class="nm">Azul Alluz</div><div class="hx">#0057FF</div><div class="det">RGB 0·87·255 · Acento secundário</div></div></div>
+      <div class="swatch"><div class="block" style="background:#080F1E;border-bottom:1px solid var(--line-s)"></div><div class="info"><div class="nm">Navy Profundo</div><div class="hx">#080F1E</div><div class="det">RGB 8·15·30 · Fundo principal</div></div></div>
+    </div>
+
+    <div style="margin-top:40px;height:80px;background:linear-gradient(90deg,#2EEAFF,#0057FF);border-radius:8px;display:flex;justify-content:space-between;align-items:flex-end;padding:16px 24px">
+      <span class="mono" style="font-size:12px;color:rgba(0,0,0,0.5);font-weight:600">#2EEAFF</span>
+      <span class="mono" style="font-size:12px;color:rgba(0,0,0,0.5);font-weight:600">#0057FF</span>
+    </div>
+    <div class="mono" style="font-size:10px;color:var(--muted);margin-top:8px;letter-spacing:2px">GRADIENTE OFICIAL · EXCLUSIVO DA MARCA</div>
+
+    <div class="g4" style="margin-top:40px">
+      <div class="swatch"><div class="block" style="height:60px;background:#F0F4FA;border-bottom:1px solid var(--line-s)"></div><div class="info"><div class="nm" style="font-size:12px">Paper</div><div class="hx" style="font-size:10px">#F0F4FA</div></div></div>
+      <div class="swatch"><div class="block" style="height:60px;background:#0E1729"></div><div class="info"><div class="nm" style="font-size:12px">Surface</div><div class="hx" style="font-size:10px">#0E1729</div></div></div>
+      <div class="swatch"><div class="block" style="height:60px;background:#6B7E9E"></div><div class="info"><div class="nm" style="font-size:12px">Muted</div><div class="hx" style="font-size:10px">#6B7E9E</div></div></div>
+      <div class="swatch"><div class="block" style="height:60px;background:#3A4860"></div><div class="info"><div class="nm" style="font-size:12px">Dim</div><div class="hx" style="font-size:10px">#3A4860</div></div></div>
+    </div>
+
+    <div class="callout" style="margin-top:32px">
+      <div class="ct">Impressão</div>
+      <p>Ciano ≈ Pantone 2985 C · Azul ≈ Pantone 2728 C · Contraste mínimo 4.5:1 (WCAG AA).</p>
+    </div>
+  </div>
+  <div class="pf"><span>03 · COR</span><span>08 / 30</span></div>
+</section>
+
+<!-- ═══════════════ TIPOGRAFIA ═══════════════ -->
+<section class="page" id="tipo">
+  <div class="ph"><div class="crumb"><span class="dot"></span> 03 / Tipo</div><div class="right">Tipografia</div></div>
+  <div class="content" style="padding-top:120px">
+    <div class="eyebrow">Tipografia</div>
+    <div class="pt" style="font-size:56px">Duas famílias.<br><strong>Zero serifa.</strong></div>
+
+    <div class="g2" style="margin-top:48px;gap:80px">
+      <div>
+        <div class="section-t" style="color:var(--cyan)">Plus Jakarta Sans</div>
+        <div class="mono" style="font-size:10px;color:var(--muted);margin-bottom:24px">LOGOTIPO · TÍTULOS · DESTAQUES</div>
+        <div style="border-bottom:1px solid var(--line-s);padding:16px 0"><span style="font-weight:200;font-size:28px;letter-spacing:-1px">Alluz Tech</span><span class="mono" style="float:right;font-size:10px;color:var(--muted);margin-top:12px">200 · WORDMARK</span></div>
+        <div style="border-bottom:1px solid var(--line-s);padding:16px 0"><span style="font-weight:400;font-size:18px">Aa Bb Cc Dd Ee</span><span class="mono" style="float:right;font-size:10px;color:var(--muted);margin-top:4px">400 · CORPO</span></div>
+        <div style="border-bottom:1px solid var(--line-s);padding:16px 0"><span style="font-weight:600;font-size:18px">Subtítulos</span><span class="mono" style="float:right;font-size:10px;color:var(--muted);margin-top:4px">600 · H3</span></div>
+        <div style="border-bottom:1px solid var(--line-s);padding:16px 0"><span style="font-weight:700;font-size:20px">Títulos</span><span class="mono" style="float:right;font-size:10px;color:var(--muted);margin-top:4px">700 · H1/H2</span></div>
+        <div style="padding:16px 0"><span style="font-weight:800;font-size:18px;letter-spacing:6px">TECH</span><span class="mono" style="float:right;font-size:10px;color:var(--muted);margin-top:4px">800 · LOGO</span></div>
+      </div>
+      <div>
+        <div class="section-t" style="color:var(--cyan)">JetBrains Mono</div>
+        <div class="mono" style="font-size:10px;color:var(--muted);margin-bottom:24px">LABELS · SPECS · CÓDIGO · CAPTIONS</div>
+        <div style="border-bottom:1px solid var(--line-s);padding:16px 0"><span class="mono" style="font-weight:400;font-size:14px">Labels e captions</span><span class="mono" style="float:right;font-size:10px;color:var(--muted);margin-top:4px">400 · LABEL</span></div>
+        <div style="border-bottom:1px solid var(--line-s);padding:16px 0"><span class="mono" style="font-weight:500;font-size:14px">Especificações técnicas</span><span class="mono" style="float:right;font-size:10px;color:var(--muted);margin-top:4px">500 · SPEC</span></div>
+        <div style="padding:16px 0"><span class="mono" style="font-weight:600;font-size:14px">Dados e código</span><span class="mono" style="float:right;font-size:10px;color:var(--muted);margin-top:4px">600 · CODE</span></div>
+
+        <div style="margin-top:48px;padding:20px 24px;background:rgba(255,77,77,0.06);border-left:2px solid #FF4D4D;border-radius:0 4px 4px 0">
+          <div class="mono" style="font-size:10px;letter-spacing:2px;color:#FF4D4D;margin-bottom:8px">REGRA CRÍTICA</div>
+          <p style="font-size:14px;color:rgba(245,249,255,0.7);line-height:1.6;font-weight:300">A Alluz Tech <strong style="font-weight:600;color:#FF6B6B">nunca usa fontes com serifa</strong>. Toda comunicação — digital ou impressa — deve usar exclusivamente Plus Jakarta Sans e JetBrains Mono.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>03 · TIPOGRAFIA</span><span>09 / 30</span></div>
+</section>
+
+<!-- ═══════════════ TOM DE VOZ ═══════════════ -->
+<section class="page soft" id="voz">
+  <div class="ph"><div class="crumb"><span class="dot"></span> 03 / Voz</div><div class="right">Tom de Voz</div></div>
+  <div class="content" style="padding-top:120px">
+    <div class="eyebrow">Tom de Voz</div>
+    <div class="pt" style="font-size:56px">Especialista de confiança,<br><strong>não vendedor de hype.</strong></div>
+    <p class="lead">A Alluz Tech fala como um parceiro técnico — próximo, claro e sem jargão desnecessário.</p>
+
+    <div class="g2" style="margin-top:48px">
+      <div class="tov">
+        <h4>Próximo e Humano</h4>
+        <p class="desc">Falamos diretamente com o empresário, sem distância corporativa.</p>
+        <div class="tov-line bad">✗ "Implementamos soluções de automação cognitiva de alto impacto."</div>
+        <div class="tov-line good">✓ "Automatizamos tarefas repetitivas para você focar no que importa."</div>
+      </div>
+      <div class="tov">
+        <h4>Claro e Direto</h4>
+        <p class="desc">Evitamos jargão técnico. Se usarmos, sempre explicamos.</p>
+        <div class="tov-line bad">✗ "Nossa stack de LLMs otimiza workflows com RAG e fine-tuning."</div>
+        <div class="tov-line good">✓ "Nossa IA aprende com seus dados e responde como seu melhor colaborador."</div>
+      </div>
+      <div class="tov">
+        <h4>Orientado a Resultado</h4>
+        <p class="desc">Sempre mostramos o benefício real, não apenas a tecnologia.</p>
+        <div class="tov-line bad">✗ "Utilizamos modelos de linguagem de última geração."</div>
+        <div class="tov-line good">✓ "Em 2 semanas, 80% das dúvidas são respondidas automaticamente."</div>
+      </div>
+      <div class="tov">
+        <h4>Confiante sem Arrogância</h4>
+        <p class="desc">Seguros do que entregamos, mas respeitamos o negócio do cliente.</p>
+        <div class="tov-line bad">✗ "Somos os melhores em IA do mercado."</div>
+        <div class="tov-line good">✓ "Temos experiência certificada e resultados comprovados em negócios como o seu."</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>03 · TOM DE VOZ</span><span>10 / 30</span></div>
+</section>
+
+<!-- ═══════════════ MOCKUP 1 — CADERNO + CANECA ═══════════════ -->
+<section class="page deep" id="apps" style="padding:0;min-height:960px">
+  <div class="ph" style="z-index:10"><div class="crumb"><span class="dot"></span> 04 / Aplicações</div><div class="right">Brindes · Caderno & Caneca</div></div>
+
+  <img src="mockup-caderno-caneca.png" alt="Caderno e caneca Alluz Tech" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.85">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,9,18,0.92) 0%,rgba(5,9,18,0.4) 40%,transparent 70%);z-index:2"></div>
+
+  <div style="position:absolute;left:80px;top:140px;max-width:480px;z-index:5">
+    <div class="eyebrow">Brindes Corporativos</div>
+    <div class="pt" style="font-size:56px">O detalhe que fica<br><strong>na mesa do parceiro.</strong></div>
+    <p class="lead" style="margin-top:18px">Caderno capa dura navy com logo hot-stamping + caneca cerâmica 350ml com pattern neural e logo central.</p>
+  </div>
+
+  <div style="position:absolute;left:80px;right:80px;bottom:80px;display:flex;gap:40px;z-index:5">
+    <div class="mock-spec"><div class="label">Caderno</div><div class="val">A5 · Capa dura navy · Hot-stamping · 80 folhas</div></div>
+    <div class="mock-spec"><div class="label">Caneca</div><div class="val">350ml · Cerâmica esmalte fosco · Pattern neural + logo</div></div>
+  </div>
+
+  <div class="pf" style="z-index:5"><span>04 · APLICAÇÕES</span><span>11 / 30</span></div>
+</section>
+
+<!-- ═══════════════ MOCKUP 2 — KIT CORPORATIVO ═══════════════ -->
+<section class="page" style="padding:0;min-height:960px">
+  <div class="ph" style="z-index:10"><div class="crumb"><span class="dot"></span> 04 / Aplicações</div><div class="right">Welcome Kit</div></div>
+
+  <img src="mockup-kit-corporativo.png" alt="Kit corporativo Alluz Tech" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.85">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,15,30,0.92) 0%,rgba(8,15,30,0.4) 40%,transparent 70%);z-index:2"></div>
+
+  <div style="position:absolute;left:80px;top:140px;max-width:480px;z-index:5">
+    <div class="eyebrow">Welcome Kit</div>
+    <div class="pt" style="font-size:56px">A caixa que abre<br><strong>a parceria.</strong></div>
+    <p class="lead" style="margin-top:18px">Kit welcome para novos clientes: caneta, chaveiro, caderneta e cartão de visita em caixa rígida navy com espuma moldada.</p>
+  </div>
+
+  <div style="position:absolute;left:80px;right:80px;bottom:80px;display:flex;gap:40px;z-index:5">
+    <div class="mock-spec"><div class="label">Caneta</div><div class="val">Metal fosco navy · Logo silk · Tinta azul</div></div>
+    <div class="mock-spec"><div class="label">Chaveiro</div><div class="val">Metal escovado · Logo gravada a laser</div></div>
+    <div class="mock-spec"><div class="label">Cartão</div><div class="val">85×55mm · Triplex 350g · Laminação soft touch</div></div>
+  </div>
+
+  <div class="pf" style="z-index:5"><span>04 · APLICAÇÕES</span><span>12 / 30</span></div>
+</section>
+
+<!-- ═══════════════ MOCKUP 3 — ESCRITÓRIO ═══════════════ -->
+<section class="page" style="padding:0;min-height:960px">
+  <div class="ph" style="z-index:10"><div class="crumb"><span class="dot"></span> 04 / Aplicações</div><div class="right">Ambiente · Escritório</div></div>
+
+  <img src="mockup-escritorio.png" alt="Escritório Alluz Tech" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,9,18,0.8) 0%,transparent 30%,transparent 60%,rgba(5,9,18,0.9) 100%);z-index:2"></div>
+
+  <div style="position:absolute;left:80px;top:120px;z-index:5">
+    <div class="eyebrow">Ambiente Físico</div>
+    <div class="pt" style="font-size:64px">O espaço que<br>comunica <strong>confiança.</strong></div>
+  </div>
+
+  <div style="position:absolute;left:80px;right:80px;bottom:80px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;z-index:5">
+    <div class="mock-spec"><div class="label">Recepção</div><div class="val">Logo retroiluminada LED ciano sobre parede navy</div></div>
+    <div class="mock-spec"><div class="label">Paredes</div><div class="val">Adesivo fosco + iluminação indireta quente</div></div>
+    <div class="mock-spec"><div class="label">Vidros</div><div class="val">Jateado + logo recortada (transparência)</div></div>
+    <div class="mock-spec"><div class="label">Iluminação</div><div class="val">Pendentes ciano + fita LED indireta</div></div>
+  </div>
+
+  <div class="pf" style="z-index:5"><span>04 · APLICAÇÕES</span><span>13 / 30</span></div>
+</section>
+
+<!-- ═══════════════ MOCKUP 4 — UNIFORME ═══════════════ -->
+<section class="page" style="padding:0;min-height:960px">
+  <div class="ph" style="z-index:10"><div class="crumb"><span class="dot"></span> 04 / Aplicações</div><div class="right">Uniformes · Polo</div></div>
+
+  <img src="mockup-uniforme.png" alt="Equipe Alluz Tech com uniforme" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,9,18,0.85) 0%,transparent 45%,transparent 55%,rgba(5,9,18,0.85) 100%),linear-gradient(180deg,rgba(5,9,18,0.7) 0%,transparent 30%,transparent 60%,rgba(5,9,18,0.8) 100%);z-index:2"></div>
+
+  <div style="position:absolute;left:80px;top:120px;z-index:5">
+    <div class="eyebrow">Uniformes em Ação</div>
+    <div class="pt" style="font-size:56px">A marca no<br><strong>time real.</strong></div>
+  </div>
+
+  <div style="position:absolute;left:80px;bottom:80px;z-index:5;max-width:460px">
+    <div style="padding:24px 28px;background:rgba(8,15,30,0.8);border:1px solid var(--line);backdrop-filter:blur(8px)">
+      <div class="caption" style="margin-bottom:12px">Polo Corporativa</div>
+      <p style="font-size:14px;line-height:1.6;color:rgba(245,249,255,0.85);font-weight:300">Polo piquet navy com logo bordada em branco/ciano no peito esquerdo. Tamanho do bordado: 7cm. Posição: 22cm abaixo da gola.</p>
+      <div style="margin-top:16px;display:flex;gap:24px" class="mono"><div style="font-size:10px;color:var(--muted)">tecido: <span style="color:var(--white)">piquet 100% algodão</span></div><div style="font-size:10px;color:var(--muted)">cor: <span style="color:var(--white)">navy #0A1220</span></div></div>
+    </div>
+  </div>
+
+  <div style="position:absolute;right:80px;bottom:80px;z-index:5">
+    <div style="padding:18px 22px;background:rgba(8,15,30,0.8);border:1px solid var(--line);backdrop-filter:blur(8px);text-align:right">
+      <div class="caption" style="margin-bottom:6px">Regra</div>
+      <div style="font-size:12px;color:var(--muted)">Nunca aplicar a logo no<br>lado direito do peito.</div>
+    </div>
+  </div>
+
+  <div class="pf" style="z-index:5"><span>04 · APLICAÇÕES</span><span>14 / 30</span></div>
+</section>
+
+<!-- ═══════════════ CONTATO ═══════════════ -->
+<section class="page soft" id="contato">
+  <div class="ph"><div class="crumb"><span class="dot"></span> Contato</div><div class="right">Aprovações</div></div>
+  <div class="content" style="padding-top:120px">
+    <div class="eyebrow">Contato & Aprovações</div>
+    <div class="pt" style="font-size:56px">Precisa usar a marca?<br><strong>Fale com a gente.</strong></div>
+
+    <div style="margin-top:48px;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--cyan);padding:40px;border-radius:4px;max-width:640px">
+      <div style="font-size:22px;font-weight:600;margin-bottom:24px">Alluz Tech</div>
+      <table class="spec-tbl">
+        <tr><td>E-mail</td><td>contato@alluztech.com.br</td></tr>
+        <tr><td>Site</td><td>alluztech.com.br</td></tr>
+        <tr><td>LinkedIn</td><td>linkedin.com/company/alluztech</td></tr>
+        <tr><td>Instagram</td><td>@alluztech</td></tr>
+      </table>
+    </div>
+
+    <div style="margin-top:48px;max-width:640px">
+      <div class="section-t">Processo de Aprovação</div>
+      <table class="spec-tbl">
+        <tr><td style="color:var(--cyan)">1 · Solicitação</td><td>Enviar material para contato@alluztech.com.br com assunto "Aprovação de Material"</td></tr>
+        <tr><td style="color:var(--cyan)">2 · Análise</td><td>Revisão em até 3 dias úteis</td></tr>
+        <tr><td style="color:var(--cyan)">3 · Feedback</td><td>Aprovação formal ou ajustes com orientações claras</td></tr>
+        <tr><td style="color:var(--cyan)">4 · Publicação</td><td>Somente após aprovação por escrito</td></tr>
+      </table>
+    </div>
+
+    <div class="callout" style="margin-top:40px;max-width:640px">
+      <div class="ct">Arquivos Oficiais</div>
+      <p>Os arquivos SVG, PNG e demais formatos são fornecidos pela Alluz Tech mediante solicitação. Utilize sempre os arquivos originais — nunca recrie ou exporte a partir de outros documentos.</p>
+    </div>
+  </div>
+  <div class="pf"><span>CONTATO</span><span>15 / 30</span></div>
+</section>
+
+<!-- ═══════════════ CONTRACAPA ═══════════════ -->
+<section class="page deep" style="min-height:960px;display:flex;align-items:center;justify-content:center;text-align:center">
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 600px 400px at 50% 50%,rgba(0,87,255,0.12),transparent 70%)"></div>
+
+  <div style="position:relative;z-index:2">
+    <div class="logo-wrap logo-xl" style="display:inline-flex">
+      <div class="logo-top"><span class="logo-alluz">Alluz</span><span class="logo-node"></span></div>
+      <div class="logo-bottom"><div class="logo-bar"></div><span class="logo-tech">Tech</span></div>
+    </div>
+    <p style="margin-top:48px;font-size:17px;color:rgba(245,249,255,0.5);font-weight:300;letter-spacing:1px">Inteligência para o seu negócio crescer.</p>
+    <div style="width:1px;height:48px;background:linear-gradient(180deg,transparent,var(--cyan),transparent);margin:32px auto"></div>
+    <p class="mono" style="font-size:10px;color:var(--dim);letter-spacing:2px">MANUAL DA MARCA V1.0 · 2026 · TODOS OS DIREITOS RESERVADOS · ALLUZ TECH</p>
+  </div>
+</section>
+
+</body>
+</html>
