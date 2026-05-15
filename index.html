@@ -179,11 +179,128 @@ nav a:hover{color:var(--cyan)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
-  .page{min-height:auto}
-  .content{padding:40px 24px}
+  .page{min-height:auto !important}
+  .content{padding:40px 24px !important}
   nav{padding:0 24px}
-  .g2,.g3,.g4{grid-template-columns:1fr}
-  .pt{font-size:42px}
+  .g2,.g3,.g4{grid-template-columns:1fr !important}
+  .pt{font-size:42px !important}
+}
+
+@media(max-width:768px){
+  body{overflow-x:hidden}
+  .page{min-height:auto !important;margin-bottom:24px}
+  nav{padding:0 16px;height:auto;min-height:52px;flex-wrap:wrap;gap:8px;row-gap:6px;padding-top:10px;padding-bottom:10px}
+  .nav-links{gap:14px;flex-wrap:wrap;justify-content:flex-end}
+  .nav-links a{font-size:10px;letter-spacing:1.5px}
+  .ph{padding:12px 20px !important;gap:8px;flex-wrap:wrap}
+  .ph .crumb,.ph .right{font-size:10px;letter-spacing:1.5px}
+  .pf{padding:12px 20px !important;font-size:9px}
+  .content{padding:56px 20px !important}
+
+  /* Hero CAPA */
+  #capa{min-height:auto !important}
+  #capa .content > div[style*="140px"]{font-size:64px !important;letter-spacing:-2px !important;line-height:1 !important}
+  #capa .content > p{font-size:14px !important}
+
+  /* Inline-style overrides */
+  [style*="padding-top:160px"]{padding-top:96px !important}
+  [style*="padding-top:120px"]{padding-top:88px !important}
+  [style*="gap:80px"]{gap:32px !important}
+  [style*="gap:64px"]{gap:32px !important}
+  [style*="gap:48px"]{gap:24px !important}
+
+  /* Titles in sections (inline font-size 56/64) */
+  .pt[style*="font-size:56px"],
+  .pt[style*="font-size:64px"]{font-size:38px !important;letter-spacing:-1px !important}
+
+  /* Mission/Vision/Values samples */
+  [style*="font-size:28px"]{font-size:20px !important;line-height:1.25 !important}
+  [style*="font-size:56px;font-weight:200"]{font-size:36px !important}
+
+  /* Logo display grids with fixed heights */
+  .g2[style*="height:300px"],
+  .g2[style*="height:280px"]{height:auto !important;grid-auto-rows:220px}
+
+  /* Specs row in logo page */
+  #logo div[style*="display:flex;gap:32px"]{flex-direction:column;gap:12px !important}
+
+  /* Swatches */
+  .swatch .block{height:80px}
+
+  /* Color palette - 4 column small grid */
+  .g4{grid-template-columns:repeat(2,1fr) !important}
+
+  /* Mockup sections: switch from absolute layout to stacked */
+  #apps,
+  section.page[style*="min-height:960px"][style*="padding:0"]{
+    min-height:auto !important;padding:0 !important
+  }
+  section.page[style*="padding:0"][style*="min-height:960px"] > img{
+    position:relative !important;inset:auto !important;
+    width:100% !important;height:auto !important;aspect-ratio:16/10;object-fit:cover;
+    display:block
+  }
+  section.page[style*="padding:0"][style*="min-height:960px"] > div[style*="position:absolute"]:not(.ph):not(.pf){
+    position:relative !important;inset:auto !important;
+    left:auto !important;right:auto !important;top:auto !important;bottom:auto !important;
+    max-width:100% !important;width:auto;
+    padding:24px 20px !important;
+    display:block;
+    text-align:left !important
+  }
+  section.page[style*="padding:0"][style*="min-height:960px"] > div[style*="position:absolute"][style*="background:linear-gradient"]{
+    display:none !important
+  }
+  section.page[style*="padding:0"][style*="min-height:960px"] .ph{
+    position:relative !important;background:rgba(5,9,18,0.92)
+  }
+  section.page[style*="padding:0"][style*="min-height:960px"] .pf{
+    position:relative !important
+  }
+  /* Mockup spec rows (flex / grid 4 cols) inside absolute boxes */
+  section.page[style*="padding:0"][style*="min-height:960px"] div[style*="display:flex;gap:40px"],
+  section.page[style*="padding:0"][style*="min-height:960px"] div[style*="grid-template-columns:repeat(4,1fr)"]{
+    display:flex !important;flex-direction:column;gap:16px !important
+  }
+
+  /* Contracapa */
+  section.page.deep[style*="min-height:960px"]{min-height:auto !important;padding:80px 20px}
+  .logo-xl{font-size:64px !important}
+
+  /* Spec table cells stack-friendly */
+  .spec-tbl td{font-size:13px;padding:12px 0}
+}
+
+@media(max-width:480px){
+  nav{padding:0 12px}
+  nav .logo-wrap[style*="font-size:22px"]{font-size:16px !important}
+  .nav-links{gap:10px}
+  .nav-links a{font-size:9px;letter-spacing:1px}
+  .ph{padding:10px 14px !important}
+  .ph .crumb,.ph .right{font-size:9px;letter-spacing:1px}
+  .content{padding:40px 14px !important}
+
+  /* Hero CAPA */
+  #capa .content > div[style*="140px"]{font-size:44px !important;letter-spacing:-1px !important}
+  .pt{font-size:30px !important}
+  .pt[style*="font-size:56px"],
+  .pt[style*="font-size:64px"]{font-size:28px !important}
+
+  [style*="padding-top:160px"]{padding-top:80px !important}
+  [style*="padding-top:120px"]{padding-top:72px !important}
+
+  /* "IA / PMEs" big numbers row */
+  #marca div[style*="display:flex;gap:48px"]{gap:24px !important}
+  [style*="font-size:56px;font-weight:200"]{font-size:28px !important}
+
+  .swatch .block{height:64px}
+  .swatch .info{padding:12px 14px}
+
+  /* Contact card */
+  [style*="border-left:4px solid var(--cyan)"][style*="padding:40px"]{padding:24px !important}
+
+  .logo-xl{font-size:52px !important}
+  .callout{padding:16px 18px}
 }
 </style>
 </head>
