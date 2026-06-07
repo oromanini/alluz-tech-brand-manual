@@ -1,0 +1,9 @@
+services:
+  copel-collector:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Necessário para o Chromium headless funcionar em containers
+    shm_size: "256m"
